@@ -61,4 +61,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 		}
 	}
 
+	@Override
+	public void deleteEmployee(long id) {
+		//Checking whether an employee with given id exists in the database or not
+		if(Objects.nonNull(employeeRepo.findById(id))) { 
+			employeeRepo.deleteById(id);
+		}else {
+			throw new ResourceNotFoundException("Employee","Id", id);
+		}
+	}
+
 }
