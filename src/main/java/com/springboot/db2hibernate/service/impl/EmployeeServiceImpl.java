@@ -2,6 +2,7 @@ package com.springboot.db2hibernate.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,21 @@ public class EmployeeServiceImpl implements EmployeeService{
 		Optional<Employee> employee = employeeRepo.findById(id);
 		if(employee.isPresent()) {
 			return employee.get();
+		}else {
+			throw new ResourceNotFoundException("Employee","Id", id);
+		}
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee, long id) {
+		//Checking whether an employee with given id exists in the database or not
+		Employee existingEmployee = employeeRepo.findById(id).orElse(null);
+		if(Objects.nonNull(existingEmployee)) {
+		existingEmployee.setFirstName(employee.getFirstName());
+		existingEmployee.setLastName(employee.getLastName());
+		existingEmployee.setEmail(employee.getEmail());
+		employeeRepo.save(existingEmployee);
+		return existingEmployee;
 		}else {
 			throw new ResourceNotFoundException("Employee","Id", id);
 		}
