@@ -57,7 +57,7 @@ Now we need to configure the DB2 Database for the project:
 In DB2 Admin Console run the following command: CREATE DATABASE EMS
 This will create a database called as "EMS" i,e Employee Management System
 
-# In src/main/resources we have application.properties file. So for the Repository/DAO Layer to talk with the DB2 Database 
+In src/main/resources we have application.properties file. So for the Repository/DAO Layer to talk with the DB2 Database 
 we need the following properties to be configured in this application.properties file.
 1) JDBC Driver
 2) JDBC URL
