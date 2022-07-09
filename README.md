@@ -2,7 +2,7 @@
 Created a simple Spring Boot App using IBM's DB2 Database and Hibernate, demonstrating the implementation of JPA.
 
 # Spring Boot Project Architecture:
-# Here we follow a 3 layer architechture or 3 tier architechture:
+# Here we follow a 3 layer architecture or 3 tier architecture:
 1) Controller Layer (Rest End Points/API Logic)
 2) Service Layer (Business Logic)
 3) Repository or DAO Layer (Persistence Logic)
