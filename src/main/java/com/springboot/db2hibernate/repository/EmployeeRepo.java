@@ -7,5 +7,5 @@ import com.springboot.db2hibernate.model.Employee;
 
 @Repository
 public interface EmployeeRepo extends CrudRepository<Employee, Long>{
-
+	
 }
