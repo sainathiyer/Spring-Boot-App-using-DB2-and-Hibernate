@@ -152,3 +152,6 @@ Similarly we use @PathVariable("id") as an argument to the getEmployeeById() Res
 
 In the updateEmployee() REST API we have used the @PutMapping controller. Now we are going to store updateEmployee() REST API Request Body into some object.
 The Request Body contains JSON, so we need to convert that JSON into Java Object for that we need to use @RequestBody annotation.
+
+# Updates:
+1) Added feature to Consume External REST API: Convert the JSON Information to Java Object using "RestTemplate" and Store it in the DB2 Database.
