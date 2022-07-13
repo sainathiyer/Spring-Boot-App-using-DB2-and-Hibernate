@@ -16,12 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.db2hibernate.model.Employee;
 import com.springboot.db2hibernate.service.EmployeeService;
+import com.springboot.db2hibernate.service.impl.ExternalApiConsumeService;
 
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
 
 	private EmployeeService employeeService;
+	
+	private ExternalApiConsumeService externalApiConsumeService;
+	
+	@Autowired
+	public void setExternalApiConsumeService(ExternalApiConsumeService externalApiConsumeService) {
+		this.externalApiConsumeService = externalApiConsumeService;
+	}
 
 	@Autowired
 	public void setEmployeeService(EmployeeService employeeService) {
@@ -58,5 +66,12 @@ public class EmployeeController {
 		employeeService.deleteEmployee(id);
 		return new ResponseEntity<String>("Employee Deleted Successfully", HttpStatus.OK);
 	}
+	
+	// Consuming External REST API
+	@PutMapping("/consume/{id}")
+	public ResponseEntity<Employee> updateData(@PathVariable("id") long id) {
+		return new ResponseEntity<Employee>(externalApiConsumeService.consumeApi(id), HttpStatus.OK);
+	}
+	
 	
 }

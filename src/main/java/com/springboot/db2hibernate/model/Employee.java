@@ -27,9 +27,17 @@ public class Employee {
 	@Column(name = "email")
 	private String email;
 	
+	@Column(name = "user_id")
+	private String userId;
+	
+	@Column(name = "title")
+	private String title;
+	
+	@Column(name = "completed")
+	private String completed;
+	
 	public Employee() {
 		super();
-
 	}
 
 	public Long getId() {
@@ -62,5 +70,29 @@ public class Employee {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(String completed) {
+		this.completed = completed;
 	}
 }
