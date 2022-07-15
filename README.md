@@ -155,7 +155,7 @@ The Request Body contains JSON, so we need to convert that JSON into Java Object
 
 # Updates:
 1) Added feature to Consume External REST API: Convert the JSON Information to Java Object using "RestTemplate" and Store it in the DB2 Database.
-2) Added Production-grade Services such as health, audits, beans, and more with the "Actuator" module.
+2) Added Production-grade Services such as health, audits, beans, and more using the "Actuator" module.
 For this I have added "implementation 'org.springframework.boot:spring-boot-starter-actuator'" in the build.gradle file.
 And after that we need to perform Gradle -> Refresh Gradle Project in Eclipse and then restart the application.
 Open the browser to invoke the URL "http://localhost:8080/actuator". So the output shows three endpoint URLs.
