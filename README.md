@@ -152,3 +152,28 @@ Similarly we use @PathVariable("id") as an argument to the getEmployeeById() Res
 
 In the updateEmployee() REST API we have used the @PutMapping controller. Now we are going to store updateEmployee() REST API Request Body into some object.
 The Request Body contains JSON, so we need to convert that JSON into Java Object for that we need to use @RequestBody annotation.
+
+# Updates:
+1) Added feature to Consume External REST API: Convert the JSON Information to Java Object using "RestTemplate" and Store it in the DB2 Database.
+2) Added Production-grade Services such as health, audits, beans, and more using the "Actuator" module.
+For this I have added "implementation 'org.springframework.boot:spring-boot-starter-actuator'" in the build.gradle file.
+And after that we need to perform Gradle -> Refresh Gradle Project in Eclipse and then restart the application.
+Open the browser to invoke the URL "http://localhost:8080/actuator". So the output shows three endpoint URLs.
+
+{
+"_links":{"self":{"href":"http://localhost:8080/actuator","templated":false},
+"health":{"href":"http://localhost:8080/actuator/health","templated":false},
+"health-path":{"href":"http://localhost:8080/actuator/health/{*path}","templated":true}
+   }
+}
+
+After accessing the default /health endpoint by pointing the browser to "http://localhost:8080/actuator/health"
+The output is this:
+
+{
+"status":"UP"
+}
+
+The above output denotes the status "UP". It means the application is healthy and running without any interruption.
+You can enable all of the built-in endpoints of Actuator. To do so, set the configuration in the application.properties file, like this.
+"management.endpoints.web.exposure.include=*"
