@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.db2hibernate.model.Employee;
@@ -71,6 +72,12 @@ public class EmployeeController {
 	@PutMapping("/consume/{id}")
 	public ResponseEntity<Employee> updateData(@PathVariable("id") long id) {
 		return new ResponseEntity<Employee>(externalApiConsumeService.consumeApi(id), HttpStatus.OK);
+	}
+	
+	// Search Employee REST API
+	@GetMapping("/search")
+	public ResponseEntity<List<Employee>> searchEmployees(@RequestParam("query") String query){
+		return new ResponseEntity<List<Employee>>(employeeService.searchEmployees(query), HttpStatus.OK);
 	}
 	
 	
