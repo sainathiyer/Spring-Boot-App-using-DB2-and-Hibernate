@@ -15,10 +15,10 @@ other than 200 are used as appropriate to indicate various failures, along with 
 Because we define all the REST API's (GET, PUT, POST, DELETE) in Controller Layer.
 
 # Method   Description
-1) GET:    Retrieve information about the REST API resource
-2) POST:   Create a REST API resource
-3) PUT:	   Update a REST API resource
-4) DELETE: Delete a REST API resource or related component
+a) GET:    Retrieve information about the REST API resource
+b) POST:   Create a REST API resource
+c) PUT:	   Update a REST API resource
+d) DELETE: Delete a REST API resource or related component
 
 2) Service Layer is responsible to maintain all the Business Logic. We should keep all the application level 
 business logic in the Service Layer. Also apart from business logic if you have any third party REST API call, so that logic can be kept in the service layer.
