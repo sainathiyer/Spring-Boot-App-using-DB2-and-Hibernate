@@ -177,3 +177,13 @@ The output is this:
 The above output denotes the status "UP". It means the application is healthy and running without any interruption.
 You can enable all of the built-in endpoints of Actuator. To do so, set the configuration in the application.properties file, like this.
 "management.endpoints.web.exposure.include=*"
+
+3) Added Search or Filter REST API:
+Created JPQL and Native SQL Queries for Search REST API. Here we use the "@Query()" annotation from Spring Data JPA.
+JPQL is Java Persistence Query Language defined in JPA specification. It is used to create queries against entities to store in a relational database. 
+JPQL is developed based on SQL syntax.
+When using JPQL Query we have to provide Class names and Field names. And when using SQL Query we have to provide Table names and Column names.
+Within the JPQL Query we use the Named Parameter ":query" to pass the value. For named parameter we use "@Param("query")" annotation in the Repo file.
+Whenever we pass the Native SQL query to "@Query()" annotation we have to enable the attribute "nativeQuery = true".
+To use this Search REST API we use "?query=" parameter in the URL.
+
