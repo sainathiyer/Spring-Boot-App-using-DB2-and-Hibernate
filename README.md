@@ -155,6 +155,8 @@ The Request Body contains JSON, so we need to convert that JSON into Java Object
 
 # Updates:
 1) Added feature to Consume External REST API: Convert the JSON Information to Java Object using "RestTemplate" and Store it in the DB2 Database.
+@JsonIgnoreProperties can be used at class level to mark a property or list of properties to be ignored. Refer: https://www.youtube.com/watch?v=QPiAhiUwb4I
+
 2) Added Production-grade Services such as health, audits, beans, and more using the "Actuator" module.
 For this I have added "implementation 'org.springframework.boot:spring-boot-starter-actuator'" in the build.gradle file.
 And after that we need to perform Gradle -> Refresh Gradle Project in Eclipse and then restart the application.
