@@ -14,11 +14,11 @@ other than 200 are used as appropriate to indicate various failures, along with 
 1) Controller Layer is responsible to process all the requests sent by the client, its also called as API layer.
 Because we define all the REST API's (GET, PUT, POST, DELETE) in Controller Layer.
 
-Method	Description
-GET	Retrieve information about the REST API resource
-POST	Create a REST API resource
-PUT	Update a REST API resource
-DELETE	Delete a REST API resource or related component
+# Method   Description
+1) GET:    Retrieve information about the REST API resource
+2) POST:   Create a REST API resource
+3) PUT:	   Update a REST API resource
+4) DELETE: Delete a REST API resource or related component
 
 2) Service Layer is responsible to maintain all the Business Logic. We should keep all the application level 
 business logic in the Service Layer. Also apart from business logic if you have any third party REST API call, so that logic can be kept in the service layer.
