@@ -11,5 +11,5 @@ public class Db2hibernateApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Db2hibernateApplication.class, args);
 	}
-
+	
 }

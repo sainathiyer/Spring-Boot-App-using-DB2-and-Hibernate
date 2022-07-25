@@ -1,10 +1,13 @@
 package com.springboot.db2hibernate.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,7 @@ import com.springboot.db2hibernate.model.Employee;
 import com.springboot.db2hibernate.service.EmployeeService;
 import com.springboot.db2hibernate.service.impl.ExternalApiConsumeService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
@@ -63,9 +67,11 @@ public class EmployeeController {
 	
 	// Delete Employee REST API
 	@DeleteMapping("{id}")
-	public ResponseEntity<String> deleteEmployee(@PathVariable("id") long id){
+	public ResponseEntity<Map<String, Boolean>>deleteEmployee(@PathVariable("id") long id){
 		employeeService.deleteEmployee(id);
-		return new ResponseEntity<String>("Employee Deleted Successfully", HttpStatus.OK);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return ResponseEntity.ok(response);
 	}
 	
 	// Consuming External REST API
