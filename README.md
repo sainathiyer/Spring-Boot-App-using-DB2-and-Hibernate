@@ -189,3 +189,4 @@ Within the JPQL Query we use the Named Parameter ":query" to pass the value. For
 Whenever we pass the Native SQL query to "@Query()" annotation we have to enable the attribute "nativeQuery = true".
 To use this Search REST API we use "?query=" parameter in the URL.
 
+4) Created a Front-End for the App Using Angular.
