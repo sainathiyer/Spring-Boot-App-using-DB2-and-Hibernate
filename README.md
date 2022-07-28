@@ -190,3 +190,4 @@ Whenever we pass the Native SQL query to "@Query()" annotation we have to enable
 To use this Search REST API we use "?query=" parameter in the URL.
 
 4) Created a Front-End for the App Using Angular.
+5) Deployed the App to Heroku cloud platform and can be accessed from the URL: https://obscure-dawn-87005.herokuapp.com/
