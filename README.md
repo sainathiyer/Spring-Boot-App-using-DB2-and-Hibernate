@@ -1,5 +1,6 @@
 # Spring-Boot-App-using-DB2-and-Hibernate
-Created a simple Spring Boot App using IBM's DB2 Database and Hibernate, demonstrating the implementation of JPA.
+Created a simple Spring Boot App using IBM's DB2 Database and Hibernate, demonstrating the implementation of JPA and added an Angular Front-End.
+This app is currently deployed to Heroku cloud platform and can be accessed at https://obscure-dawn-87005.herokuapp.com/
 
 # Spring Boot Project Architecture:
 # Here we follow a 3 layer architecture or 3 tier architecture:
